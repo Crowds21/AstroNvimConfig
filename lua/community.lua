@@ -4,10 +4,14 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
+  -- Rust
+  { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.lua" },
   -- import/override with your plugins folder
-  -- Neorg
-  {import = "astrocommunity.note-taking.neorg"},
   -- Colorscheme catppuccin
-  {import = "astrocommunity.colorscheme.catppuccin"},
+  -- Neory
+  { import = "astrocommunity.note-taking.neorg" },
+  -- UI
+  { import = "astrocommunity.color.transparent-nvim" },
+  { import = "astrocommunity.colorscheme.catppuccin" },
 }

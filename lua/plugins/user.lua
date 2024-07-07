@@ -1,67 +1,40 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
--- You can also add or configure plugins by creating files in this `plugins/` folder
--- Here are some examples:
-
 ---@type LazySpec
 return {
-
-  -- == Examples of Adding Plugins ==
-  -- neo-tree
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = {
-      filesystem = {
-        filtered_items = {
-          visible = true,
-          show_hidden_count = true,
-          hide_dotfiles = false,
-          hide_gitignored = false,
-          hide_by_name = {
-            -- '.git',
-            ".DS_Store",
-            -- 'thumbs.db',
-          },
-          never_show = {},
-        },
-      },
-    },
-  },
+  -- == Neory ==
+  -- {
+  --   "rebelot/kanagawa.nvim", -- neorg needs a colorscheme with treesitter support
+  --   config = function()
+  --       vim.cmd.colorscheme("kanagawa")
+  --   end,
+  -- },
   "andweeb/presence.nvim",
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
     config = function() require("lsp_signature").setup() end,
   },
-
-  -- == Examples of Overriding Plugins ==
-
-  -- customize alpha options
+  -- "goolord/alpha-nvim",
   {
     "goolord/alpha-nvim",
     opts = function(_, opts)
       -- customize the dashboard header
       opts.section.header.val = {
-        " █████  ███████ ████████ ██████   ██████",
-        "██   ██ ██         ██    ██   ██ ██    ██",
-        "███████ ███████    ██    ██████  ██    ██",
-        "██   ██      ██    ██    ██   ██ ██    ██",
-        "██   ██ ███████    ██    ██   ██  ██████",
-        " ",
-        "    ███    ██ ██    ██ ██ ███    ███",
-        "    ████   ██ ██    ██ ██ ████  ████",
-        "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-        "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-        "    ██   ████   ████   ██ ██      ██",
+        [[　　　 　　/＾>》, -―‐‐＜＾}]],
+        [[　　　 　./:::/,≠´::::::ヽ.]],
+        [[　　　　/::::〃::::／}::丿ハ]],
+        [[　　　./:::::i{l|／　ﾉ／ }::}]],
+        [[　　 /:::::::瓜イ＞　´＜ ,:ﾉ]],
+        [[　 ./::::::|ﾉﾍ.{､　(_ﾌ_ノﾉイ＿]],
+        [[　 |:::::::|／}｀ｽ /          /]],
+        [[.　|::::::|(_:::つ/ AppleMac /　neovim!]],
+        [[.￣￣￣￣￣￣￣＼/＿＿＿＿＿/￣￣￣￣￣]],
       }
       return opts
     end,
   },
-
   -- You can disable default plugins as follows:
   { "max397574/better-escape.nvim", enabled = false },
-
-  -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
+  -- "L3MON4D3/LuaSnip",
   {
     "L3MON4D3/LuaSnip",
     config = function(plugin, opts)
@@ -71,7 +44,7 @@ return {
       luasnip.filetype_extend("javascript", { "javascriptreact" })
     end,
   },
-
+  -- "windwp/nvim-autopairs",
   {
     "windwp/nvim-autopairs",
     config = function(plugin, opts)
